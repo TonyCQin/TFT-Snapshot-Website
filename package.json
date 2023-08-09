@@ -1,0 +1,29 @@
+{
+  "name": "tft-snapshot-website",
+  "description": "TFT Snapshot Website\r a",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "http-errors": "^2.0.0",
+    "https": "^1.0.0",
+    "json": "^11.0.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "jade": "^0.29.0"
+  }
+}
