@@ -5,7 +5,7 @@ const fs = require("fs").promises;
 const util = require("./util");
 const path = require("path");
 const http = require("http");
-const port = 8080;
+const port = process.env.PORT;
 const host = "localhost";
 
 // listening to stuff
