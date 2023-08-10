@@ -113,14 +113,14 @@ fetch("/tft.json")
     console.error("Error fetching the JSON file:", error);
   });
 
-setInterval(() => {
-  runFunction("/api/resetSnapshot");
-  fetch("/tft.json")
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error("Error fetching the JSON file:", error);
-    });
-}, 15000);
+// setInterval(() => {
+//   runFunction("/api/resetSnapshot");
+//   fetch("/tft.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       console.log(data);
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching the JSON file:", error);
+//     });
+// }, 15000);
