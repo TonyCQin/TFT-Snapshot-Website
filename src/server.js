@@ -39,7 +39,7 @@ app.post("/api/updateStats", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Server is running on port " + PORT);
+  console.log("Server is running on port " + port);
 });
 
 let indexFile;
