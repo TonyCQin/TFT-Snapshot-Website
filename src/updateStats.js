@@ -7,8 +7,6 @@ const util = require("./util");
 
 // Path to tft.json
 const jsonPath = util.path;
-// API Key defined on external json file
-let apiKey = 0;
 
 // Update the Stats of the Summoners on the JSON FIle
 async function updateStats() {

@@ -42,6 +42,7 @@ const playerRankInnerHTML = function (summonerName, tier, rank, leaguePoints) {
   rankStyle.width = "fit-content";
 
   docRank.setAttribute("id", "rank");
+  docRank.classList.add(`${summonerName}-rank`.replace(/\s/g, ""));
   // docRank.classList.add("rank");
 
   docRank.append(docRankImage);
@@ -51,15 +52,12 @@ const playerRankInnerHTML = function (summonerName, tier, rank, leaguePoints) {
   playerRankedStats.forEach(function (html) {
     playerRanked.append(html);
   });
-  console.log(playerRanked);
-
   playerRanks.append(playerRanked);
 };
 
 // function to write snapshot leaderboard innerHTML
 const playerSnapshotInnerHTML = function (summonerName, snapshotPoints) {
   let playerSnapshots = document.querySelector(".center-align-snapshot");
-  // console.log(player);
 
   let playerSnapshot = document.createElement("div");
   playerSnapshot.classList.add("player-snapshot");
@@ -71,6 +69,7 @@ const playerSnapshotInnerHTML = function (summonerName, snapshotPoints) {
   let docSnapshotPoints = document.createElement("a");
   docSnapshotPoints.innerText = `${snapshotPoints}`;
   docSnapshotPoints.setAttribute("id", "snapshot-points");
+  docSnapshotPoints.classList.add(`${summonerName}-points`.replace(/\s/g, ""));
 
   let playerSnapshotStats = [docSnapshotUsername, docSnapshotPoints];
 
@@ -81,11 +80,24 @@ const playerSnapshotInnerHTML = function (summonerName, snapshotPoints) {
   playerSnapshots.append(playerSnapshot);
 };
 
+function runFunction(endpoint) {
+  fetch(endpoint, {
+    method: "POST",
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.text();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
 fetch("/tft.json")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
-    // You can now access the parsed data as a JavaScript object
     data.forEach((player) => {
       playerRankInnerHTML(
         player.username,
@@ -100,3 +112,15 @@ fetch("/tft.json")
   .catch((error) => {
     console.error("Error fetching the JSON file:", error);
   });
+
+setInterval(() => {
+  runFunction("/api/resetSnapshot");
+  fetch("/tft.json")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching the JSON file:", error);
+    });
+}, 15000);
