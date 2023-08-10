@@ -4,7 +4,7 @@ const { json } = require("express");
 const Participant = require("./Participant.js");
 
 const fs = require("fs").promises;
-let jsonPath = "./tft.json";
+let jsonPath = "../public/tft.json";
 module.exports.path = jsonPath;
 let tierMap = new Map([
   ["IRON", 1000],
@@ -74,7 +74,7 @@ module.exports.updateSnapshot = async () => {
 
   // Write to JSON File
   let jsonData = JSON.stringify(personJSON);
-  fs.writeFile("./tft.json", jsonData, function (err) {
+  fs.writeFile(jsonPath, jsonData, function (err) {
     if (err) {
       return console.log(err);
     }
@@ -84,8 +84,6 @@ module.exports.updateSnapshot = async () => {
 
 // Update the Stats of the Summoners on the JSON FIle
 module.exports.updateStats = async () => {
-  // Get the API Key from the external config file
-  console.log(apiKey);
   // List of the updated stats
   let updatedPeopleStats = [];
 

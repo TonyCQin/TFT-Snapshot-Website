@@ -25,7 +25,7 @@ async function updateSnapshot() {
 
   // Write to JSON File
   let jsonData = JSON.stringify(personJSON);
-  fs.writeFile("./tft.json", jsonData, function (err) {
+  fs.writeFile(jsonPath, jsonData, function (err) {
     if (err) {
       return console.log(err);
     }

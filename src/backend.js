@@ -6,6 +6,7 @@ const util = require("./util");
 
 // function for getting stats of people
 async function getStats(username) {
+  console.log("../config.json");
   const apiKey = await util.fetchAPIKey("../config.json");
   const link = `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${username}${apiKey}`;
 
@@ -72,7 +73,7 @@ playerList.forEach(function (person) {
         // console.log(jsonData);
 
         // writing to json file
-        fs.writeFile("./tft.json", jsonData, function (err) {
+        fs.writeFile("./public/tft.json", jsonData, function (err) {
           if (err) {
             return console.log(err);
           }
