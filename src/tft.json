@@ -1,1 +1,66 @@
-[{"username":"mattjzhou","tier":"CHALLENGER","rank":"I","LP":1010,"orderingScore":8410,"snapshotPoints":0},{"username":"tkamat29","tier":"CHALLENGER","rank":"I","LP":935,"orderingScore":8335,"snapshotPoints":0},{"username":"Doruwaza","tier":"GRANDMASTER","rank":"I","LP":776,"orderingScore":8176,"snapshotPoints":0},{"username":"Klustic","tier":"GRANDMASTER","rank":"I","LP":501,"orderingScore":7901,"snapshotPoints":0},{"username":"ECG Aero","tier":"MASTER","rank":"I","LP":397,"orderingScore":7797,"snapshotPoints":0},{"username":"Xenosol","tier":"DIAMOND","rank":"IV","LP":61,"orderingScore":6161,"snapshotPoints":0},{"username":"AetherCrest","tier":"PLATINUM","rank":"II","LP":11,"orderingScore":5311,"snapshotPoints":0},{"username":"Jerry173821","tier":"SILVER","rank":"II","LP":51,"orderingScore":3351,"snapshotPoints":0}]
+[
+  {
+    "username": "mattjzhou",
+    "tier": "CHALLENGER",
+    "rank": "I",
+    "LP": 1010,
+    "orderingScore": 8410,
+    "snapshotPoints": 0
+  },
+  {
+    "username": "tkamat29",
+    "tier": "CHALLENGER",
+    "rank": "I",
+    "LP": 935,
+    "orderingScore": 8335,
+    "snapshotPoints": 0
+  },
+  {
+    "username": "Doruwaza",
+    "tier": "GRANDMASTER",
+    "rank": "I",
+    "LP": 776,
+    "orderingScore": 8176,
+    "snapshotPoints": 0
+  },
+  {
+    "username": "Klustic",
+    "tier": "GRANDMASTER",
+    "rank": "I",
+    "LP": 501,
+    "orderingScore": 7901,
+    "snapshotPoints": 0
+  },
+  {
+    "username": "ECG Aero",
+    "tier": "MASTER",
+    "rank": "I",
+    "LP": 397,
+    "orderingScore": 7797,
+    "snapshotPoints": 0
+  },
+  {
+    "username": "Xenosol",
+    "tier": "DIAMOND",
+    "rank": "IV",
+    "LP": 61,
+    "orderingScore": 6161,
+    "snapshotPoints": 0
+  },
+  {
+    "username": "AetherCrest",
+    "tier": "PLATINUM",
+    "rank": "II",
+    "LP": 11,
+    "orderingScore": 5311,
+    "snapshotPoints": 0
+  },
+  {
+    "username": "Jerry173821",
+    "tier": "SILVER",
+    "rank": "II",
+    "LP": 51,
+    "orderingScore": 3351,
+    "snapshotPoints": 0
+  }
+]
