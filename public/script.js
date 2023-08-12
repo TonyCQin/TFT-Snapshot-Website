@@ -15,7 +15,7 @@ const playerRankInnerHTML = function (summonerName, tier, rank, leaguePoints) {
     docRankUsername.style.color = "black";
   });
 
-  let docRank = document.createElement("a");
+  // creating the rank image
   let docRankImage = document.createElement("img");
   docRankImage.setAttribute("src", `/rankimages/${tier}.png`);
   docRankImage.setAttribute("loading", "lazy");
@@ -23,16 +23,18 @@ const playerRankInnerHTML = function (summonerName, tier, rank, leaguePoints) {
   docRankImage.style.height = "30px";
   docRankImage.style.display = "inline-block";
   docRankImage.style.verticalAlign = "middle";
+
+  // creating the rank text
   let docRankText = document.createElement("a");
-
   if (tier === "CHALLENGER" || tier === "GRANDMASTER" || tier === "MASTER") {
-    docRankText.innerText = `${leaguePoints} LP`;
+    docRankText.innerText = `${tier} ${leaguePoints} LP`;
   } else {
-    // docRank.innerText = `${tier} ${rank} ${leaguePoints} LP`;
-    docRankText.innerText = `${tier} ${rank}`;
+    docRankText.innerText = `${tier} ${rank} ${leaguePoints} LP`;
   }
-
   docRankText.setAttribute("id", "rank-text");
+
+  // creating the rank
+  let docRank = document.createElement("a");
 
   let rankStyle = docRankText.style;
   rankStyle.display = "inline-block";
@@ -43,7 +45,6 @@ const playerRankInnerHTML = function (summonerName, tier, rank, leaguePoints) {
 
   docRank.setAttribute("id", "rank");
   docRank.classList.add(`${summonerName}-rank`.replace(/\s/g, ""));
-  // docRank.classList.add("rank");
 
   docRank.append(docRankImage);
   docRank.append(docRankText);
@@ -80,21 +81,6 @@ const playerSnapshotInnerHTML = function (summonerName, snapshotPoints) {
   playerSnapshots.append(playerSnapshot);
 };
 
-function runFunction(endpoint) {
-  fetch(endpoint, {
-    method: "POST",
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.text();
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-}
-
 fetch("/tft.json")
   .then((response) => response.json())
   .then((data) => {
@@ -112,15 +98,3 @@ fetch("/tft.json")
   .catch((error) => {
     console.error("Error fetching the JSON file:", error);
   });
-
-// setInterval(() => {
-//   runFunction("/api/resetSnapshot");
-//   fetch("/tft.json")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log(data);
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching the JSON file:", error);
-//     });
-// }, 15000);
