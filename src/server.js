@@ -117,7 +117,7 @@ fs.readFile(path.join(__dirname, "Participant.js"))
   .then((contents) => {
     cssFile = contents;
     // console.log("style.css read");
-    return fs.readFile(path.join(__dirname, "./tft.json"));
+    return fs.readFile(path.join(__dirname, "../public/tft.json"));
   })
   .then((contents) => {
     tftjsonFile = contents;
